@@ -1,5 +1,5 @@
-# soccerplayer.app
-A soccer player crypto game ported to [Harmony](http://harmony.one) blockchain
+# Art-Galery-LMA.app
+A Art Galery LMA ported to [Harmony](http://harmony.one) blockchain
 
 ## Install instructions
 
@@ -52,4 +52,4 @@ node examples/purchase.js
 
 ## Disclaimer
 
-This project is sourced from [CryptoSoccerToken](https://etherscan.io/address/0xc95c0910d39d1f6cd3bd71e4b689660c18172b7b#code). We are building it for technology demonstration, and not for commercial purposes.
+This project is sourced from [CryptoSoccerToken](https://etherscan.io/address/0xc95c0910d39d1f6cd3bd71e4b689660c18172b7b#code).
