@@ -1,5 +1,5 @@
-# Art-Galery-LMA.app
-A Art Galery LMA ported to [Harmony](http://harmony.one) blockchain
+# www.lma-art-gallery.com
+A Art Gallery from LMA ported with love to [Harmony](http://harmony.one) blockchain
 
 ## Install instructions
 
