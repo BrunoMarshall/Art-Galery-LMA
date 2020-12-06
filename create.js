@@ -8,7 +8,7 @@ module.exports = function () {
       "Deportation",
       "The Earth is Burning",
       "Family Portrait",
-      "Full River",
+      "The Golden River",
       "Labour Camp",
       "Only Clover To Eat",
       "Traces of a Home",
