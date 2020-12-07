@@ -10,14 +10,14 @@ const hmy = new Harmony(
   }
 );
 const contractJson = require("../build/contracts/HarmonyArt.json");
-const contractAddr = "0xAA557003A04e75626dAcA70d8A70E717F8F987fc";
+const contractAddr = "0x0Fc3269F1ED6807aD96C62b66fAfdE2C02f9a76b";
 
 const soccerPlayers = hmy.contracts.createContract(
   contractJson.abi,
   contractAddr
 );
 soccerPlayers.wallet.addByPrivateKey(
-  process.env.PRIVATE_KEY
+  process.env.PRIVATE_KEY2
 );
 const options = {
   gasPrice: process.env.GAS_PRICE,
@@ -33,8 +33,8 @@ async function purchase(id) {
 //       ", tx hash: " +
 //       res.transaction.receipt
 //   );
-    console.log(res.transaction.receipt);
+    console.log(res);
 }
-purchase(2).then(() => {
+purchase(0).then(() => {
   process.exit(0);
 });

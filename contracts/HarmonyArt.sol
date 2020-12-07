@@ -196,7 +196,7 @@ contract HarmonyArt is ERC721 {
         uint256 purchaseExcess = SafeMath.sub(msg.value, sellingPrice);
 
         // Update prices
-        playerIndexToPrice[_tokenId] = SafeMath.mul(sellingPrice, sellingPrice);
+        playerIndexToPrice[_tokenId] = SafeMath.add(sellingPrice, sellingPrice);
 
         _transfer(oldOwner, newOwner, _tokenId);
         emit Snatch(_tokenId, oldOwner, newOwner);
