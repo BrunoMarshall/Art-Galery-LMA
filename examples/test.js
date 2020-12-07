@@ -2,7 +2,7 @@ require("dotenv").config();
 const { Harmony } = require("@harmony-js/core");
 const { ChainID, ChainType } = require("@harmony-js/utils");
 const hmy = new Harmony(
-  HMY_NODE_URL,
+  process.env.HMY_NODE_URL,
   {
     chainType: ChainType.Harmony,
     chainId: Number(process.env.HMY_CHAIN_ID),

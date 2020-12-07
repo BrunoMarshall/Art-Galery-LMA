@@ -3,7 +3,7 @@ const { Harmony } = require("@harmony-js/core");
 const { ChainID, ChainType } = require("@harmony-js/utils");
 const hmy = new Harmony(
   // let's assume we deploy smart contract to this end-point URL
-  HMY_NODE_URL,
+  process.env.HMY_NODE_URL,
   {
     chainType: ChainType.Harmony,
     chainId: Number(process.env.HMY_CHAIN_ID),
@@ -22,7 +22,7 @@ soccerPlayers.wallet.addByPrivateKey(
 const options = {
   gasPrice: process.env.GAS_PRICE,
   gasLimit: process.env.GAS_LIMIT,
-  value: 100000000000000000000, // 100 ONEs
+  value: 200000000000000000000, // 100 ONEs
 };
 const instance = soccerPlayers.methods;
 async function purchase(id) {
@@ -35,6 +35,6 @@ async function purchase(id) {
 //   );
     console.log(res);
 }
-purchase(4).then(() => {
+purchase(16).then(() => {
   process.exit(0);
 });
