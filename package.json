@@ -1,10 +1,10 @@
 {
-  "name": "soccerplayers.app",
+  "name": "harmonyart.app",
   "version": "1.0.0",
-  "description": "Harmony soccerplayers.app",
+  "description": "Harmony Art.app",
   "main": "truffle.js",
   "dependencies": {
-    "@harmony-js/core": "^0.1.46",
+    "@harmony-js/core": "^0.1.56",
     "dotenv": "^8.1.0",
     "openzeppelin-solidity": "^2.2.0",
     "solc": "^0.5.8",

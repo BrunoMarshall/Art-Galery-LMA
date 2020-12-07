@@ -1,11 +1,11 @@
-var SoccerPlayers = artifacts.require("SoccerPlayers");
+var HarmonyArt = artifacts.require("HarmonyArt");
 
 module.exports = function () {
   async function purchase(id) {
     let val = 100000000000000000000; // 10 ONEs
     // let price = 30000000000
-    SoccerPlayers.defaults({value: val});//, gasPrice: price})
-    let instance = await SoccerPlayers.deployed();
+    HarmonyArt.defaults({value: val});//, gasPrice: price})
+    let instance = await HarmonyArt.deployed();
     let res = await instance.purchase(id);
     console.log("tx hash:" + res.tx);
     res.logs.forEach(event => {

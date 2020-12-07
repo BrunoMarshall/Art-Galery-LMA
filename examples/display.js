@@ -9,8 +9,8 @@ const hmy = new Harmony(
     chainId: ChainID.HmyTestnet,
   }
 );
-const contractJson = require("../build/contracts/SoccerPlayers.json");
-const contractAddr = "0x224802786fee2e0DAfCA627ee173f45FAdE69bE6";
+const contractJson = require("../build/contracts/HarmonyArt.json");
+const contractAddr = "0xAA557003A04e75626dAcA70d8A70E717F8F987fc";
 
 const soccerPlayers = hmy.contracts.createContract(
   contractJson.abi,
@@ -25,10 +25,10 @@ const instance = soccerPlayers.methods;
 
 async function display() {
   let total = await instance.totalSupply().call(options);
-  console.log("total players: " + total.toString());
+  console.log("total arts: " + total.toString());
   for (i = 0; i < total; i++) {
     let res = await instance.getPlayer(i).call(options);
-    console.log("========== Player info (index: " + i + ")==========");
+    console.log("========== Art info (index: " + i + ")==========");
     console.log("name", res.playerName);
     console.log("internalPlayerId", res.internalPlayerId);
     console.log("sellingPrice", res.sellingPrice);

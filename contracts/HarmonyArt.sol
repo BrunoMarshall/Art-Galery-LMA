@@ -3,7 +3,7 @@ pragma solidity >=0.4.21 <0.6.0;
 import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
 
-contract SoccerPlayers is ERC721 {
+contract HarmonyArt is ERC721 {
 
     /*** EVENTS ***/
 
@@ -28,8 +28,8 @@ contract SoccerPlayers is ERC721 {
     /*** CONSTANTS ***/
 
     /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-    string public constant NAME = "SoccerPlayers";
-    string public constant SYMBOL = "SoccerPlayers";
+    string public constant NAME = "HarmonyArt";
+    string public constant SYMBOL = "HarmonyArt";
 
     uint256 private startingPrice = 100000000000000000000; // 100 ONEs
     uint256 private constant PROMO_CREATION_LIMIT = 5000;
@@ -191,12 +191,12 @@ contract SoccerPlayers is ERC721 {
         // Making sure sent amount is greater than or equal to the sellingPrice
         require(msg.value >= sellingPrice, "purchase value must be greater than selling price");
 
-        uint256 commission = SafeMath.div(SafeMath.mul(sellingPrice, 2), 100);
+        uint256 commission = SafeMath.div(SafeMath.mul(sellingPrice, 50), 100);
         uint256 payment = SafeMath.sub(sellingPrice, commission);
         uint256 purchaseExcess = SafeMath.sub(msg.value, sellingPrice);
 
         // Update prices
-        playerIndexToPrice[_tokenId] = SafeMath.add(sellingPrice, SafeMath.div(SafeMath.mul(sellingPrice, 15), 100));
+        playerIndexToPrice[_tokenId] = SafeMath.mul(sellingPrice, sellingPrice);
 
         _transfer(oldOwner, newOwner, _tokenId);
         emit Snatch(_tokenId, oldOwner, newOwner);

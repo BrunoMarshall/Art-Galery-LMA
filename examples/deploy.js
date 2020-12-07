@@ -13,7 +13,7 @@ const options = {
   gasPrice: process.env.GAS_PRICE, // 1000000000 (1 GWei)
   gasLimit: process.env.GAS_LIMIT, // 103802 should be good
 };
-const contractJson = require("../build/contracts/SoccerPlayers.json");
+const contractJson = require("../build/contracts/HarmonyArt.json");
 let soccerPlayers = hmy.contracts.createContract(contractJson.abi);
 
 soccerPlayers.wallet.addByPrivateKey(

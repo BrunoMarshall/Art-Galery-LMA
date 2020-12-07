@@ -1,13 +1,13 @@
-var SoccerPlayers = artifacts.require("SoccerPlayers");
+var HarmonyArt = artifacts.require("HarmonyArt");
 
 module.exports = function () {
   async function display() {
-    let instance = await SoccerPlayers.deployed();
+    let instance = await HarmonyArt.deployed();
     let total = await instance.totalSupply();
-    console.log("total players: " + total.toString());
+    console.log("total arts: " + total.toString());
     for (i = 0; i < total; i++) {
       let res = await instance.getPlayer(i);
-      console.log("========== Player info (index: " + i + ")==========");
+      console.log("========== Art info (index: " + i + ")==========");
       console.log("name", res.playerName);
       console.log("internalPlayerId", res.internalPlayerId);
       console.log("sellingPrice", res.sellingPrice);

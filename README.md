@@ -14,7 +14,7 @@ A Art Gallery from LMA ported with love to [Harmony](http://harmony.one) blockch
 * Fetch repo 
 
 ```
-git clone https://github.com/gupadhyaya/soccerplayers.git
+git clone https://github.com/BrunoMarshall/lma-art-gallery.git
 ```
 
 * Install dependencies
@@ -23,13 +23,13 @@ git clone https://github.com/gupadhyaya/soccerplayers.git
 npm install
 ```
 
-* Compile soccer player smart contract
+* Compile Harmony Art smart contract
 
 ```
 truffle compile
 ```
 
-* Deploy soccer player smart contract. You will need a testnet funded account. Fund your harmony one address [here](https://harmony-faucet.ibriz.ai)
+* Deploy Harmony Art smart contract. You will need a testnet funded account. Fund your harmony one address [here](https://faucet.pops.one)
 
 ```
 truffle migrate --reset --network testnet
@@ -39,13 +39,13 @@ or
 node examples/deploy.js
 ```
 
-* Create soccer players
+* Create Harmony Arts
 
 ```
 node examples/create.js
 ```
 
-* Purchase soccer players
+* Purchase Harmony Art
 ```
 node examples/purchase.js
 ```

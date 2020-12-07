@@ -1,9 +1,9 @@
-var SoccerPlayers = artifacts.require("SoccerPlayers");
-const myAddress = "0xc162199cDaeAa5a82f00651dd4536F5d2d4277C5";
+var HarmonyArt = artifacts.require("HarmonyArt");
+const myAddress = "0x8305CF9EFa27c72A547B218Dd0B2Cc18dD9316F0";
 
 module.exports = function () {
   async function createPlayers() {
-    let instance = await SoccerPlayers.deployed();
+    let instance = await HarmonyArt.deployed();
     let players = [
       "Deportation",
       "The Earth is Burning",
@@ -35,7 +35,7 @@ module.exports = function () {
     }
   }
   async function display() {
-    let instance = await SoccerPlayers.deployed();
+    let instance = await HarmonyArt.deployed();
     let total = await instance.totalSupply();
     console.log("total players: " + total.toString());
     for (i = 0; i < total; i++) {

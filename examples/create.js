@@ -9,16 +9,14 @@ const hmy = new Harmony(
     chainId: ChainID.HmyTestnet,
   }
 );
-const contractJson = require("../build/contracts/SoccerPlayers.json");
-const contractAddr = "0x224802786fee2e0DAfCA627ee173f45FAdE69bE6";
+const contractJson = require("../build/contracts/HarmonyArt.json");
+const contractAddr = "0xAA557003A04e75626dAcA70d8A70E717F8F987fc";
 
 const soccerPlayers = hmy.contracts.createContract(
   contractJson.abi,
   contractAddr
 );
-soccerPlayers.wallet.addByPrivateKey(
-  process.env.PRIVATE_KEY
-);
+soccerPlayers.wallet.addByPrivateKey(process.env.PRIVATE_KEY);
 const ceoAddress = soccerPlayers.wallet.signer.address;
 
 const options = {
@@ -29,10 +27,10 @@ const instance = soccerPlayers.methods;
 
 async function display() {
   let total = await instance.totalSupply().call(options);
-  console.log("total players: " + total.toString());
+  console.log("total arts: " + total.toString());
   for (i = 0; i < total; i++) {
     let res = await instance.getPlayer(i).call(options);
-    console.log("========== Player info (index: " + i + ")==========");
+    console.log("========== Art info (index: " + i + ")==========");
     console.log("name", res.playerName);
     console.log("internalPlayerId", res.internalPlayerId);
     console.log("sellingPrice", res.sellingPrice);
@@ -42,23 +40,36 @@ async function display() {
 }
 async function createPlayers() {
   let players = [
-    "Andrea Pirlo",
-    "Diego Maradona",
-    "Ronaldo",
-    "Ronaldinho",
-    "Lionel Messi",
-    "Pele",
-    "Cristiano Ronaldo",
-    "Zinedine Zidane",
-    "Johan Cruyff",
-    "Andres Iniesta",
+    "Deportation",
+    "The Earth is Burning",
+    "Family Portrait",
+    "The Golden River",
+    "Labour Camp",
+    "Only Clover To Eat",
+    "Traces of a Home",
+    "Daily Registration",
+    "Child Memories",
+    "Lost Family",
+    "War",
+    "Piroschki",
+    "Schuster",
+    "Unfulfilled Expectations",
+    "Black Soup",
+    "Emigration",
+    "Nationalities",
+    "Integration Feeling",
+    "Background-origin",
+    "Mother Language",
+    "Neighbours",
+    "Religions",
+    "Home",
   ];
   for (i = 0; i < players.length; i++) {
     let res = await instance
       .createPromoPlayer(ceoAddress, players[i], 0, i)
       .send(options);
     console.log(
-      "created player: " +
+      "created art: " +
         players[i] +
         ", tx hash: " +
         res.transaction.receipt.transactionHash
