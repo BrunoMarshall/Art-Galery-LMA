@@ -3,14 +3,14 @@ const { Harmony } = require("@harmony-js/core");
 const { ChainID, ChainType } = require("@harmony-js/utils");
 const hmy = new Harmony(
   // let's assume we deploy smart contract to this end-point URL
-  "https://api.s0.b.hmny.io",
+  HMY_NODE_URL,
   {
     chainType: ChainType.Harmony,
-    chainId: ChainID.HmyTestnet,
+    chainId: Number(process.env.HMY_CHAIN_ID),
   }
 );
 const contractJson = require("../build/contracts/HarmonyArt.json");
-const contractAddr = "0x0Fc3269F1ED6807aD96C62b66fAfdE2C02f9a76b";
+const contractAddr = process.env.HMY_ART_CONTRACT;
 
 const soccerPlayers = hmy.contracts.createContract(
   contractJson.abi,
@@ -35,6 +35,6 @@ async function purchase(id) {
 //   );
     console.log(res);
 }
-purchase(0).then(() => {
+purchase(4).then(() => {
   process.exit(0);
 });

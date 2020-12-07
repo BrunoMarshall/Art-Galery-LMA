@@ -3,10 +3,10 @@ const { Harmony } = require("@harmony-js/core");
 const { ChainID, ChainType } = require("@harmony-js/utils");
 const hmy = new Harmony(
   // let's assume we deploy smart contract to this end-point URL
-  "https://api.s0.b.hmny.io",
+  HMY_NODE_URL,
   {
     chainType: ChainType.Harmony,
-    chainId: ChainID.HmyTestnet,
+    chainId: Number(process.env.HMY_CHAIN_ID),
   }
 );
 const options = {
