@@ -191,7 +191,7 @@ contract HarmonyArt is ERC721 {
         // Making sure sent amount is greater than or equal to the sellingPrice
         require(msg.value >= sellingPrice, "purchase value must be greater than selling price");
 
-        uint256 commission = SafeMath.div(SafeMath.mul(sellingPrice, 50), 100);
+        uint256 commission = SafeMath.div(SafeMath.mul(sellingPrice, 25), 100);
         uint256 payment = SafeMath.sub(sellingPrice, commission);
         uint256 purchaseExcess = SafeMath.sub(msg.value, sellingPrice);
 
